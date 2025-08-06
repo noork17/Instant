@@ -26,6 +26,6 @@ def register_view(request):
             User.objects.create_user(username=username, email=email, password=password1)
             return redirect('login')
     return render(request, 'interface/register.html')
-
 def home_view(request):
+
     return render(request, 'interface/home.html')
