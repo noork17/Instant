@@ -12,6 +12,13 @@
       font-family: 'Inter', sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      background-image:url("../../static/img/14.jpg");
+      background-size: cover;           /* Scales image to cover the whole background */
+    background-repeat: no-repeat;     /* Prevents tiling */
+    background-position: center;      /* Centers the image */
+    background-attachment: fixed;     /* Keeps image fixed during scroll */
+    margin: 0;
+    padding: 0;
     }
     /* General layout for main content */
     .container {
@@ -232,7 +239,7 @@
     <!-- Header Section -->
     <header class="flex flex-col md:flex-row items-center justify-between p-4 bg-white shadow-md rounded-lg mb-6">
       <a href="#" class="flex items-center mb-4 md:mb-0">
-        <img src="https://placehold.co/50x50/E0F2F7/000000?text=IF" alt="InstantFoodiee Logo" class="w-12 h-12 rounded-full mr-2" />
+        <img src="../../static/img/logo.png" alt="InstantFoodiee Logo" class="w-12 h-12 rounded-full mr-2" />
         <span class="text-2xl font-bold text-gray-800">InstantFoodiee</span>
       </a>
       <div class="relative w-full md:w-1/2 mx-4">
@@ -404,13 +411,13 @@
     // Mock data for restaurants (including menus for all of them)
     const mockRestaurants = [
       {
-        id: 1,
+        id: 9,
         name: "The Pizza Place",
         cuisine: "Pizza",
         rating: 4.5,
         delivery_time: "30-45 min",
         delivery_fee: 2.99,
-        image_url: "https://placehold.co/400x250/FF6347/FFFFFF?text=Pizza+Place",
+        image_url: "../../static/img/pizza.jpg",
         featured: true,
         menu: [
           { id: 'p1', name: 'Pepperoni Pizza', price: 12.50 },
@@ -420,13 +427,28 @@
         ]
       },
       {
+        id: 1,
+        name: "Curry House",
+        cuisine: "Indian",
+        rating: 4.4,
+        delivery_time: "45-60 min",
+        delivery_fee: 3.00,
+        image_url: "../../static/img/chicken.jpg",
+        featured: false,
+        menu: [
+          { id: 'i4', name: 'Chicken Tikka Masala', price: 16.00 },
+          { id: 'i5', name: 'Naan Bread', price: 2.50 },
+          { id: 'i6', name: 'Vegetable Biryani', price: 14.00 }
+        ]
+      },
+      {
         id: 2,
         name: "Burger Haven",
         cuisine: "Burger",
         rating: 4.2,
         delivery_time: "20-30 min",
         delivery_fee: 1.50,
-        image_url: "https://placehold.co/400x250/4CAF50/FFFFFF?text=Burger+Haven",
+        image_url: "../../static/img/burger.jpg",
         featured: false,
         menu: [
           { id: 'b1', name: 'Classic Burger', price: 9.99 },
@@ -436,28 +458,13 @@
         ]
       },
       {
-        id: 3,
-        name: "Sushi Express",
-        cuisine: "Sushi",
-        rating: 4.8,
-        delivery_time: "40-55 min",
-        delivery_fee: 3.50,
-        image_url: "https://placehold.co/400x250/FFD700/000000?text=Sushi+Express",
-        featured: true,
-        menu: [
-          { id: 's1', name: 'Salmon Nigiri (2pcs)', price: 6.00 },
-          { id: 's2', name: 'California Roll (8pcs)', price: 9.50 },
-          { id: 's3', name: 'Miso Soup', price: 3.00 }
-        ]
-      },
-      {
         id: 4,
         name: "Asian Fusion",
         cuisine: "Asian",
         rating: 4.0,
         delivery_time: "35-50 min",
         delivery_fee: 2.00,
-        image_url: "https://placehold.co/400x250/1E90FF/FFFFFF?text=Asian+Fusion",
+        image_url: "../../static/img/rice.jpg",
         featured: false,
         menu: [
           { id: 'a1', name: 'Pad Thai', price: 13.00 },
@@ -472,7 +479,7 @@
         rating: 4.6,
         delivery_time: "25-40 min",
         delivery_fee: 2.75,
-        image_url: "https://placehold.co/400x250/DA70D6/FFFFFF?text=Mama+Mia",
+        image_url: "../../static/img/22.jpg",
         featured: true,
         menu: [
           { id: 'i1', name: 'Spaghetti Carbonara', price: 14.00 },
@@ -487,7 +494,7 @@
         rating: 4.7,
         delivery_time: "15-25 min",
         delivery_fee: 1.00,
-        image_url: "https://placehold.co/400x250/FFA07A/FFFFFF?text=Sweet+Delights",
+        image_url: "../../static/img/23.jpg",
         featured: false,
         menu: [
           { id: 'd1', name: 'Chocolate Cake Slice', price: 7.00 },
@@ -502,7 +509,7 @@
         rating: 4.3,
         delivery_time: "30-40 min",
         delivery_fee: 2.25,
-        image_url: "https://placehold.co/400x250/8A2BE2/FFFFFF?text=Taco+Fiesta",
+        image_url: "../../static/img/24.jpg",
         featured: false,
         menu: [
           { id: 'm1', name: 'Beef Tacos (3pcs)', price: 10.00 },
@@ -517,7 +524,7 @@
         rating: 4.9,
         delivery_time: "30-40 min",
         delivery_fee: 1.75,
-        image_url: "https://placehold.co/400x250/8BC34A/FFFFFF?text=Vegan+Spot",
+        image_url: "../../static/img/25.jpg",
         featured: true,
         menu: [
           { id: 'v1', name: 'Vegan Burger', price: 13.00 },
@@ -525,21 +532,6 @@
           { id: 'v3', name: 'Sweet Potato Fries', price: 4.00 }
         ]
       },
-      {
-        id: 9,
-        name: "Curry House",
-        cuisine: "Indian",
-        rating: 4.4,
-        delivery_time: "45-60 min",
-        delivery_fee: 3.00,
-        image_url: "https://placehold.co/400x250/FF9800/FFFFFF?text=Curry+House",
-        featured: false,
-        menu: [
-          { id: 'i4', name: 'Chicken Tikka Masala', price: 16.00 },
-          { id: 'i5', name: 'Naan Bread', price: 2.50 },
-          { id: 'i6', name: 'Vegetable Biryani', price: 14.00 }
-        ]
-      }
     ];
 
     let selectedCuisine = "All";
